@@ -7,6 +7,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
+import tensorflow as tf
+from tensorflow import keras
 import base64
 from sklearn.preprocessing import StandardScaler
 
