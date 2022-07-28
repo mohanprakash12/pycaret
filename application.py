@@ -25,7 +25,7 @@ if uploaded_file:
     )
     st.dataframe(input_df)
     st.write('')
-    rfm = pickle.load( open( "pycaret", "rb" ) )
+    rfm = pickle.load( open( "pycaret.pkl", "rb" ) )
 
     X = input_df.drop(labels = ['CMemNo'], axis = 1)
 
