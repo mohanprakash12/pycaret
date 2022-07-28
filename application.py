@@ -25,7 +25,7 @@ if uploaded_file:
     )
     st.dataframe(input_df)
     st.write('')
-    rfm = pickle.load( open( "ran_forestry_mod.p", "rb" ) )
+    rfm = pickle.load( open( "pycaret", "rb" ) )
 
     X = input_df.drop(labels = ['CMemNo'], axis = 1)
 
@@ -35,7 +35,7 @@ if uploaded_file:
     y_preds = (predicted_proba [:,1] >= threshold).astype('int')
     op_list = []
     for idx, Failed in enumerate(y_preds):
-        if Failed == 0:
+        if Failed =='Failed':
             op_list.append(input_df.CMemNo.iloc[idx])
     st.write('''### Number of Potentially Churning Customers Payment''')
     st.write('''There are **{} customers** at risk of Payment Failure.'''.format(len(op_list)))
